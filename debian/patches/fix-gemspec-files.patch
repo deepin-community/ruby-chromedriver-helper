@@ -1,0 +1,21 @@
+Fix file metadata when package is built outside of a git repository
+--- a/chromedriver-helper.gemspec
++++ b/chromedriver-helper.gemspec
+@@ -16,13 +16,10 @@ Gem::Specification.new do |s|
+   s.description = "Easy installation and use of chromedriver, the Chromium project's selenium webdriver adapter."
+   s.licenses    = ["MIT"]
+ 
+-  begin
+-    s.files         = `git ls-files`.split("\n")
+-    s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+-    s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+-  rescue Exception => e
+-    warn "WARNING: could not set spec.files: #{e.class}: #{e}"
+-  end
++  s.files         = Dir['**/*'] - Dir['debian/**/*']
++  s.test_files    = Dir['{test,spec,features}/**/*']
++  s.executables   = Dir['bin/*'].map{ |f| File.basename(f) }
++
+   s.require_paths = ["lib"]
+ 
+   s.add_development_dependency "rspec",     "~> 3.0"

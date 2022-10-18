@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+export DH_RUBY = --gem-install
+export GEM2DEB_TEST_RUNNER = --check-dependencies
+export HOME = /tmp
+
+%:
+	dh $@ --buildsystem=ruby --with ruby
+
+override_dh_install:
+	dh_install
+	rm -rf debian/ruby-chromedriver-helper/usr/bin

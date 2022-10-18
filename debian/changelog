@@ -1,0 +1,54 @@
+ruby-chromedriver-helper (2.1.0-7) unstable; urgency=medium
+
+  * Team upload
+  * Add patch to remove examples using internet connection (Closes: #924125)
+  * Update d/rules to remove usr/bin
+  * Update d/control
+
+ -- Utkarsh Gupta <guptautkarsh2102@gmail.com>  Sun, 24 Mar 2019 19:55:41 +0530
+
+ruby-chromedriver-helper (2.1.0-6) unstable; urgency=medium
+
+  * Team upload.
+  * debian/tests/control: revert accidental removal
+
+ -- Antonio Terceiro <terceiro@debian.org>  Fri, 15 Feb 2019 16:56:47 -0200
+
+ruby-chromedriver-helper (2.1.0-5) unstable; urgency=medium
+
+  * Team upload.
+  * fix-gemspec-files.patch: correctly set metadata on files when not built
+    inside a git repository (which should be always) (Closes: #922376)
+    - add a smoke-test for that that reproduces the original issue
+  * add missing dependency on ruby-selenium-webdriver
+
+ -- Antonio Terceiro <terceiro@debian.org>  Fri, 15 Feb 2019 12:15:00 -0200
+
+ruby-chromedriver-helper (2.1.0-4) unstable; urgency=medium
+
+  * Team upload
+  * Drop new-rails-app autopkgtest (as recommended by Antonio)
+
+ -- Pirate Praveen <praveen@debian.org>  Fri, 15 Feb 2019 19:09:09 +0530
+
+ruby-chromedriver-helper (2.1.0-3) unstable; urgency=medium
+
+  * Team upload
+  * Remove relative path usage in tests to fix autopkgtest
+
+ -- Pirate Praveen <praveen@debian.org>  Fri, 15 Feb 2019 16:20:14 +0530
+
+ruby-chromedriver-helper (2.1.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Use gem-install option of dh_ruby to fix path to bin (Closes: #922376)
+  * Add autopkgtest
+  * Bump Standards-Version to 4.3.0 (no changes needed)
+
+ -- Pirate Praveen <praveen@debian.org>  Fri, 15 Feb 2019 14:55:53 +0530
+
+ruby-chromedriver-helper (2.1.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #912897)
+
+ -- Mangesh Divate <divatemangesh12@gmail.com>  Mon, 05 Nov 2018 07:27:35 +0000

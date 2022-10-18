@@ -1,0 +1,2 @@
+version=3
+https://gemwatch.debian.net/chromedriver-helper .*/chromedriver-helper-(.*).tar.gz

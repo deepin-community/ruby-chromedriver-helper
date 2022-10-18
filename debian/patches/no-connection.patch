@@ -1,0 +1,34 @@
+Description: This patch removes the examples which uses internet connection.
+Author: Utkarsh Gupta <guptautkarsh2102@gmail.com>
+Bug URL: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=924125 (RC Bug)
+---
+--- ruby-chromedriver-helper-2.1.0.orig/spec/helper_spec.rb
++++ ruby-chromedriver-helper-2.1.0/spec/helper_spec.rb
+@@ -3,17 +3,17 @@ require "spec_helper"
+ describe Chromedriver::Helper do
+   let(:helper) { Chromedriver::Helper.new }
+ 
+-  describe "#binary_path" do
+-    context "on a linux platform" do
+-      before { allow(helper).to receive(:platform) { "linux32" } }
+-      it { expect(helper.binary_path).to match(/chromedriver$/) }
+-    end
++#  describe "#binary_path" do
++#    context "on a linux platform" do
++#      before { allow(helper).to receive(:platform) { "linux32" } }
++#      it { expect(helper.binary_path).to match(/chromedriver$/) }
++#    end
+ 
+-    context "on a windows platform" do
+-      before { allow(helper).to receive(:platform) { "win" } }
+-      it { expect(helper.binary_path).to match(/chromedriver\.exe$/) }
+-    end
+-  end
++#    context "on a windows platform" do
++#      before { allow(helper).to receive(:platform) { "win" } }
++#      it { expect(helper.binary_path).to match(/chromedriver\.exe$/) }
++#    end
++#  end
+ 
+   describe '#platform' do
+     os_cpu_matrix = [

@@ -1,0 +1,3 @@
+remove-relative-path-to-lib.patch
+fix-gemspec-files.patch
+no-connection.patch

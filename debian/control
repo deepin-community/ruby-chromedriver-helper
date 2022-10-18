@@ -1,0 +1,36 @@
+Source: ruby-chromedriver-helper
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Mangesh Divate <divatemangesh12@gmail.com>
+Build-Depends: debhelper (>= 11~),
+               gem2deb,
+               rake,
+               ruby-archive-zip (>= 0.10),
+               ruby-nokogiri (>= 1.8),
+               ruby-rspec
+Standards-Version: 4.3.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-chromedriver-helper.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-chromedriver-helper
+Homepage: https://github.com/flavorjones/chromedriver-helper
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-chromedriver-helper
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ruby | ruby-interpreter,
+         ruby-archive-zip (>= 0.10),
+         ruby-nokogiri (>= 1.8),
+         ruby-selenium-webdriver,
+         ${misc:Depends}
+Description: Easy installation and use of chromedriver
+ chromedriver-helper installs an executable, chromedriver-helper, in your gem
+ path, and configures Selenium to invoke it as the web driver.
+ .
+ This script will, if necessary, download the appropriate binary for your
+ platform and install it into ~/.chromedriver-helper, then exec it. Easy peasy!
+ .
+ Individual projects can even select which version of chromedriver they want to
+ run.

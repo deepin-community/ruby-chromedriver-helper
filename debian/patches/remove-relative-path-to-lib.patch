@@ -1,0 +1,8 @@
+autopkgtest should use installed package, not source tree
+
+--- a/spec/spec_helper.rb
++++ b/spec/spec_helper.rb
+@@ -1,2 +1,2 @@
+ require "rspec"
+-require File.expand_path(File.join(File.dirname(__FILE__), "..", "lib/chromedriver/helper"))
++require "chromedriver/helper"

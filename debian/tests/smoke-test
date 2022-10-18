@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -eu
+exec 2>&1
+
+cd $AUTOPKGTEST_TMP
+cat > Gemfile <<GEMFILE
+group :test do
+  gem "chromedriver-helper"
+end
+GEMFILE
+
+echo "Gemfile:"
+echo '----------------8<----------------8<----------------8<-----------------'
+cat Gemfile
+echo '----------------8<----------------8<----------------8<-----------------'
+
+echo
+set -x
+ruby -r'bundler' -e 'Bundler.require("test"); puts Selenium::WebDriver::Chrome.driver_path'
